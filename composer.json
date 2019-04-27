@@ -1,0 +1,28 @@
+{
+    "name": "litphp/view-php",
+    "description": "A view that use native PHP to render output for lit",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "McFog Wang",
+            "email": "mcfogw@gmail.com"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.9.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Lit\\View\\Php\\": ""
+        }
+    },
+    "require": {
+        "litphp/air": "^0.9@dev",
+        "litphp/voltage": "^0.9@dev",
+        "slim/php-view": "^2.2.1"
+    }
+}
