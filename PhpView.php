@@ -7,6 +7,7 @@ namespace Lit\View\Php;
 use Lit\Voltage\AbstractView;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Views\PhpRenderer;
+use Lit\Air\Configurator as C;
 
 class PhpView extends AbstractView
 {
@@ -33,5 +34,15 @@ class PhpView extends AbstractView
     public function render(array $data = []): ResponseInterface
     {
         return $this->renderer->render($this->response, $this->template, $data);
+    }
+
+    public static function configuration(array $rendererParams)
+    {
+        return [
+            PhpViewFactory::class=>C::provideParameter([
+                C::alias(PhpViewFactory::class, PhpRenderer::class),
+            ]),
+            C::join(PhpViewFactory::class, PhpRenderer::class) => C::instance(PhpRenderer::class, $rendererParams),
+        ];
     }
 }
