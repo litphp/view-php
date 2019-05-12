@@ -21,8 +21,8 @@
         }
     },
     "require": {
-        "litphp/air": "^0.9@dev",
-        "litphp/voltage": "^0.9@dev",
+        "litphp/air": "^0.9",
+        "litphp/voltage": "^0.9",
         "slim/php-view": "^2.2.1"
     }
 }
