@@ -39,7 +39,7 @@ class PhpView extends AbstractView
     public static function configuration(array $rendererParams)
     {
         return [
-            PhpViewFactory::class=>C::provideParameter([
+            PhpViewFactory::class => C::provideParameter([
                 C::alias(PhpViewFactory::class, PhpRenderer::class),
             ]),
             C::join(PhpViewFactory::class, PhpRenderer::class) => C::instance(PhpRenderer::class, $rendererParams),
